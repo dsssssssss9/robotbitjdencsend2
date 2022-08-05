@@ -1,6 +1,5 @@
 modules.rotaryEncoder1.onPositionChanged(function () {
     ROTOR = modules.rotaryEncoder1.position()
-    basic.showNumber(ROTOR)
     if (ROTOR >= 1) {
         radio.sendString("a")
     } else if (ROTOR < 0) {
