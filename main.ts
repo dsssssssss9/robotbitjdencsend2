@@ -1,17 +1,3 @@
-// 
-// If Jacdac Button 1 is pressed down send 1 to receiver
-// 
-// This value determines direction of Motor
-modules.button1.onEvent(jacdac.ButtonEvent.Down, function () {
-    radio.sendNumber(1)
-})
-// 
-// If Jacdac Button 2 is pressed down send -1 to receiver
-// 
-// This value determines direction of Motor
-modules.button2.onEvent(jacdac.ButtonEvent.Down, function () {
-    radio.sendNumber(-1)
-})
 modules.rotaryEncoder1.onPositionChanged(function () {
     ROTOR = modules.rotaryEncoder1.position()
     basic.showNumber(ROTOR)
@@ -20,6 +6,18 @@ modules.rotaryEncoder1.onPositionChanged(function () {
     } else if (ROTOR < 0) {
         radio.sendString("b")
     }
+})
+modules.button1.onEvent(jacdac.ButtonEvent.Down, function () {
+    radio.sendNumber(1)
+})
+input.onButtonPressed(Button.A, function () {
+	
+})
+input.onButtonPressed(Button.B, function () {
+	
+})
+modules.button2.onEvent(jacdac.ButtonEvent.Down, function () {
+    radio.sendNumber(-1)
 })
 // Show Icon on Micro:Bit to show system is ready
 // 
