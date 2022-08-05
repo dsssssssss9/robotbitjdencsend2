@@ -4,6 +4,8 @@ modules.rotaryEncoder1.onPositionChanged(function () {
         radio.sendString("a")
     } else if (ROTOR < 0) {
         radio.sendString("b")
+    } else if (ROTOR == 0) {
+        radio.sendString("S")
     }
 })
 modules.button1.onEvent(jacdac.ButtonEvent.Down, function () {
